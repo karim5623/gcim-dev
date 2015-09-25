@@ -1,4 +1,4 @@
-package org.opensha2;
+package org.opensha2.gmm;
 
 import java.io.IOException;
 import java.nio.file.Path;
