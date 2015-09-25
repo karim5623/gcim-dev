@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -11,6 +11,7 @@ import org.opensha2.eq.model.HazardModel;
 import org.opensha2.eq.model.Source;
 import org.opensha2.eq.model.SourceSet;
 import org.opensha2.gmm.Gmm;
+import org.opensha2.gmm.GmmInput;
 import org.opensha2.programs.HazardCurve;
 
 public class TestGmm {

@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2;
 import static java.lang.Math.abs;
 import static java.lang.Math.cos;
 import static java.lang.Math.cosh;
@@ -22,9 +22,12 @@ import static org.opensha2.gmm.GmmInput.Field.ZTOP;
 import java.util.Map;
 
 import org.opensha2.eq.fault.Faults;
+import org.opensha2.gmm.CoefficientContainer;
 import org.opensha2.gmm.DefaultScalarGroundMotion;
 import org.opensha2.gmm.FaultStyle;
+import org.opensha2.gmm.Gmm;
 import org.opensha2.gmm.GmmInput;
+import org.opensha2.gmm.GmmUtils;
 import org.opensha2.gmm.GmmInput.Constraints;
 import org.opensha2.gmm.GroundMotionModel;
 import org.opensha2.gmm.Imt;
