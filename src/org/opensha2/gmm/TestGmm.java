@@ -18,7 +18,7 @@ public class TestGmm {
 
 	public static void main (String args[]) throws IOException {
 		
-		double siteLat = 34.053, siteLon = -118.243, siteDepth = 0.0, siteVs30 = 250, depth1p0=1; String siteName = "LosAngeles";
+		double siteLat = 34.053, siteLon = -118.243, siteDepth = 0.0, siteVs30 = 250, depth1p0=0.2; String siteName = "LosAngeles";
 		
 		Site site = Site.builder()
 				.location(siteLat,siteLon)
@@ -31,15 +31,14 @@ public class TestGmm {
 		GmmInput gmmInput = GmmInput.builder()
 				.withDefaults()
 				.mag(7.5)
+				.z1p0(depth1p0)
 				.build();
 		System.out.println(gmmInput);	
 		
 //		Logging.init();
 		
-//		Path modelPath = Paths.get("etc","examples","model","Fault","config.json"); // add more as needed	
 		Path modelPath = Paths.get("..","nshmp-haz","etc","peer","models","Set1-Case1"); // add more as needed	
 		
-//		Path modelPath = Paths.get("etc","examples","model","Fault","config.json"); // add more as needed	
 		Path test = Paths.get("etc");
 		System.out.println(test.toRealPath());
 		
