@@ -11,8 +11,8 @@ public class TestHazCurve_InputFiles {
 
 	public static void main (String args[]) throws IOException {	
 
-		//Path modelPath = Paths.get("..","nshmp-haz","etc","peer","models","Set1-Case1"); // add more as needed	
-		Path modelPath = Paths.get("..","nshmp-haz","etc","peer","models","Set1-Case1"); // add more as needed	
+		//Path modelPath = Paths.get("..","nshmp-haz","etc","peer","models","Set1-Case1"); 
+		Path modelPath = Paths.get("..","gcim-dev","src","org","opensha2","gmm","FiniteFaultModel");	
 
 		HazardModel model = HazardModel.load(modelPath);
 		System.out.println(model);
@@ -22,8 +22,10 @@ public class TestHazCurve_InputFiles {
 		};
 		HazardCurve.main(calcArgs);
 		
-
-//		// set up input parameters
+		
+		
+// -----------------------------------------------------------------------------------------------
+//		// if u want to set the site here, u can use the following codes 
 //		double siteLat = 38.0, siteLon = -122.0, siteDepth = 0.0, siteVs30 = 250, depth1p0=0.2, depth2p5=0.6;
 //		String siteName = "Test Site";
 //		
@@ -43,8 +45,8 @@ public class TestHazCurve_InputFiles {
 //				Optional.<Executor>absent());
 //		
 //		System.out.println(result);
-//		System.out.println(result.curves());
-		
+//		System.out.println(result.curves());	
+// -----------------------------------------------------------------------------------------------
 		
 		
 		
