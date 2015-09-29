@@ -3,14 +3,27 @@ package org.opensha2.gmm;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.Executor;
 
+import org.opensha2.calc.HazardResult;
+import org.opensha2.calc.Site;
 import org.opensha2.eq.model.HazardModel;
 import org.opensha2.programs.HazardCurve;
+
+import com.google.common.base.Optional;
 
 public class TestHazCurve_InputFiles {
 
 	public static void main (String args[]) throws IOException {	
 
+		
+// -----------------------------------------------------------------------------------------------
+		// approach one: 
+		
+		//put the gmm.xml, source.xml, and config.json in a folder and give the directory info to Path
+		// then use main method of HazardCurve class to do the calculations
+		// the out put will be flushed into the result folder that is automatically generated 
+		
 		//Path modelPath = Paths.get("..","nshmp-haz","etc","peer","models","Set1-Case1"); 
 		Path modelPath = Paths.get("..","gcim-dev","src","org","opensha2","gmm","FiniteFaultModel");	
 
@@ -20,11 +33,13 @@ public class TestHazCurve_InputFiles {
 		String[] calcArgs = new String[] {
 				modelPath.toString()
 		};
+		
 		HazardCurve.main(calcArgs);
 		
 		
 		
-// -----------------------------------------------------------------------------------------------
+//// -----------------------------------------------------------------------------------------------
+		// approach two: 
 //		// if u want to set the site here, u can use the following codes 
 //		double siteLat = 38.0, siteLon = -122.0, siteDepth = 0.0, siteVs30 = 250, depth1p0=0.2, depth2p5=0.6;
 //		String siteName = "Test Site";
@@ -46,12 +61,10 @@ public class TestHazCurve_InputFiles {
 //		
 //		System.out.println(result);
 //		System.out.println(result.curves());	
-// -----------------------------------------------------------------------------------------------
+//// -----------------------------------------------------------------------------------------------
+//		
 		
-		
-		
-		
-		
+			
 //		for (SourceSet<? extends Source> sourceSet : model) {
 //			System.out.println(sourceSet);
 //			
