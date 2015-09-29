@@ -26,6 +26,7 @@ public class TestScenrioSpectrum {
 		gmmSet.add(gmm3);
 		
 		
+		
 		double siteLat = 38.0;
 		double siteLon = -122.0;
 		double siteDepth = 0.0;
