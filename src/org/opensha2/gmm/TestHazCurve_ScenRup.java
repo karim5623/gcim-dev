@@ -62,7 +62,6 @@ public class TestHazCurve_ScenRup {
 				.zTop(zTop)
 				.z1p0(depth1p0)
 				.z2p5(depth2p5)
-				
 				.build();
 		System.out.println("gmmInput: "+ gmmInput);	
 

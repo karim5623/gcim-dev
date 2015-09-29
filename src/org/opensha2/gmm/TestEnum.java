@@ -91,11 +91,16 @@ public class TestEnum {
 		 }
 		GmmElement x = GmmElement.fromString("GroundMotionModels");
 	    System.out.println(x);	
+	    System.out.println(" ");
 	    
-	    
+	    for (Field fiel : Field.values()) {	
+	    	
+	    	System.out.println(fiel); 
+	    }
 		// test second enum
 	    Field myField = Field.MAG;
 	    System.out.println(myField.getLabel());
+	    System.out.println(myField.getDefaultValue());
 	}
 	
 
