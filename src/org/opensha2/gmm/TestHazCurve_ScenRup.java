@@ -1,5 +1,19 @@
 package org.opensha2.gmm;
 
+import static org.opensha2.gmm.GmmInput.Field.DIP;
+import static org.opensha2.gmm.GmmInput.Field.MAG;
+import static org.opensha2.gmm.GmmInput.Field.RAKE;
+import static org.opensha2.gmm.GmmInput.Field.RJB;
+import static org.opensha2.gmm.GmmInput.Field.RRUP;
+import static org.opensha2.gmm.GmmInput.Field.RX;
+import static org.opensha2.gmm.GmmInput.Field.VS30;
+import static org.opensha2.gmm.GmmInput.Field.VSINF;
+import static org.opensha2.gmm.GmmInput.Field.WIDTH;
+import static org.opensha2.gmm.GmmInput.Field.Z1P0;
+import static org.opensha2.gmm.GmmInput.Field.Z2P5;
+import static org.opensha2.gmm.GmmInput.Field.ZHYP;
+import static org.opensha2.gmm.GmmInput.Field.ZTOP;
+
 import java.io.IOException;
 
 import org.opensha2.calc.Site;
@@ -20,7 +34,10 @@ public class TestHazCurve_ScenRup {
 		double rJB = 10.0;
 		double rRup = 10.3;
 		double dip = 90;
+		double rake = 0;
+		double zTop = 0.1;
 		
+		// no need to have a site parameter for this calculation, because everything is set in GmmInput
 		Site site = Site.builder()
 				.name(siteName)
 				.location(siteLat,siteLon)
@@ -31,16 +48,25 @@ public class TestHazCurve_ScenRup {
 				.build();
 		System.out.println(site);
 		
-		// look into the GmmInput file to see the other parameters 
+		// parameters that u can set to a Gmm:
+		// mag rJB rRup rX dip width zTop zHyp rake vs30 vsInf vs30 z1p0 z2p5 
 		GmmInput gmmInput = GmmInput.builder()
 				.withDefaults()
 				.mag(mag)
 				.rJB(rJB)
 				.rRup(rRup)
-				.z1p0(depth1p0)
 				.dip(dip)
+				.rake(rake)
+				.vs30(siteVs30)
+				.vsInf(true)
+				.zTop(zTop)
+				.z1p0(depth1p0)
+				.z2p5(depth2p5)
+				
 				.build();
 		System.out.println("gmmInput: "+ gmmInput);	
+
+		
 		
 		
 		Gmm gmm = Gmm.BA_08;
