@@ -38,15 +38,15 @@ public class TestHazCurve_ScenRup {
 		double zTop = 0.1;
 		
 		// no need to have a site parameter for this calculation, because everything is set in GmmInput
-		Site site = Site.builder()
-				.name(siteName)
-				.location(siteLat,siteLon)
-				.vs30(siteVs30)
-				.vsInferred(true)
-				.z1p0(depth1p0)
-				.z2p5(depth2p5)
-				.build();
-		System.out.println(site);
+//		Site site = Site.builder()
+//				.name(siteName)
+//				.location(siteLat,siteLon)
+//				.vs30(siteVs30)
+//				.vsInferred(true)
+//				.z1p0(depth1p0)
+//				.z2p5(depth2p5)
+//				.build();
+//		System.out.println(site);
 		
 		// parameters that u can set to a Gmm:
 		// mag rJB rRup rX dip width zTop zHyp rake vs30 vsInf vs30 z1p0 z2p5 

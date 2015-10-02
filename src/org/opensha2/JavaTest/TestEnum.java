@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2.JavaTest;
 
 import static com.google.common.base.CaseFormat.UPPER_CAMEL;
 import static com.google.common.base.CaseFormat.UPPER_UNDERSCORE;

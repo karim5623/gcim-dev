@@ -37,7 +37,6 @@ public class TestHazCurve_InputFiles {
 		HazardCurve.main(calcArgs);
 		
 		
-		
 //// -----------------------------------------------------------------------------------------------
 		// approach two: 
 //		// if u want to set the site here, u can use the following codes 
