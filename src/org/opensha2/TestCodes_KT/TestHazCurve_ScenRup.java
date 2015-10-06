@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2.TestCodes_KT;
 
 import static org.opensha2.gmm.GmmInput.Field.DIP;
 import static org.opensha2.gmm.GmmInput.Field.MAG;
@@ -17,6 +17,11 @@ import static org.opensha2.gmm.GmmInput.Field.ZTOP;
 import java.io.IOException;
 
 import org.opensha2.calc.Site;
+import org.opensha2.gmm.Gmm;
+import org.opensha2.gmm.GmmInput;
+import org.opensha2.gmm.GroundMotionModel;
+import org.opensha2.gmm.Imt;
+import org.opensha2.gmm.ScalarGroundMotion;
 
 public class TestHazCurve_ScenRup {
 

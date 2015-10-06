@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2.TestCodes_KT;
 
 import static com.google.common.base.StandardSystemProperty.LINE_SEPARATOR;
 
@@ -7,6 +7,11 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.opensha2.gmm.Gmm;
+import org.opensha2.gmm.GmmInput;
+import org.opensha2.gmm.Imt;
+import org.opensha2.gmm.MatSpectrum;
+import org.opensha2.gmm.ScalarGroundMotion;
 import org.opensha2.programs.DeterministicSpectra;
 import org.opensha2.programs.DeterministicSpectra.MultiResult;
 import org.opensha2.programs.DeterministicSpectra.Result;
@@ -41,6 +46,8 @@ public class TestScenrioSpectrum {
 		double rake = 0;
 		double zTop = 0.1;
 		
+		
+		
 		GmmInput gmmInput = GmmInput.builder()
 				.withDefaults()
 				.mag(mag)
@@ -55,13 +62,34 @@ public class TestScenrioSpectrum {
 				.z2p5(depth2p5)
 				.build();
 		
+		
+		
+		
 		// for multiple gmms 
 		MultiResult multiGmmResults = DeterministicSpectra.spectra(gmmSet, gmmInput);
 		System.out.println((multiGmmResults.meanMap));
+		System.out.println(" ");
 		
-//		// for a single gmm 
-//		Result singleGmmResults = DeterministicSpectra.spectrum(gmm1, gmmInput);
-//
+		
+		// for a single gmm 
+		Result singleGmmResults = DeterministicSpectra.spectrum(gmm1, gmmInput);
+		System.out.println("singleGmmResults: "+ singleGmmResults);
+		System.out.println(" ");
+		
+		
+//		Set<Imt> imts = gmm1.responseSpectrumIMTs();
+//		MatSpectrum spectrum = new MatSpectrum(imts.size());
+//		int i = 0;
+//		for (Imt imt : imts) {
+//			ScalarGroundMotion sgm = gmm1.instance(imt).calc(gmmInput);
+//			spectrum.periods[i] = imt.period();
+//			spectrum.means[i] = sgm.mean();
+//			spectrum.sigmas[i] = sgm.sigma();
+//			i++;
+//		}
+//		System.out.println("spectrum: "+spectrum);
+//		System.out.println(" ");
+//		
 //		StringBuilder sb = new StringBuilder();
 //		sb.append("periods=").append(Arrays.toString(singleGmmResults.periods));
 //		sb.append(LINE_SEPARATOR.value());

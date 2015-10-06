@@ -1,4 +1,4 @@
-package org.opensha2.gmm;
+package org.opensha2.TestCodes_KT;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -28,12 +28,21 @@ public class TestHazCurve_InputFiles {
 		Path modelPath = Paths.get("..","gcim-dev","src","org","opensha2","gmm","FiniteFaultModel");	
 
 		HazardModel model = HazardModel.load(modelPath);
+		
 		System.out.println(model);
+		System.out.println(model.name());
+		System.out.println(model.size());
+		System.out.println(model.config());
+		System.out.println(model.toString());
 
 		String[] calcArgs = new String[] {
 				modelPath.toString()
 		};
 		
+		System.out.println("calcArgs[0]"+ calcArgs[0]);
+//		System.out.println("calcArgs[1]"+ calcArgs[1]);
+//		System.out.println("calcArgs[2]"+ calcArgs[2]);
+
 		HazardCurve.main(calcArgs);
 		
 		
